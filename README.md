@@ -1,13 +1,13 @@
 
 # Alpine image containing: curl, ca-certificates and jq
 
-## Usage 
+When testing api's you need `curl` and `jq` and for TLS you also need `ca-certificates`.
+
+## Usage
 
 ```shell
 
-docker run -d --name devwebapp --rm -e VAULT_ADDR=$VAULT_ADDR -e VAULT_TOKEN=$VAULT_TOKEN -p 8080:8080 dirc/devwebapp-ruby:$TAG
-
-docker exec -it devwebapp curl -s localhost:8080
+docker run --rm dirc/alpine-curl-certs-jq:latest curl https://www.google.com
 
 ```
 
@@ -16,11 +16,12 @@ docker exec -it devwebapp curl -s localhost:8080
 ```shell
 
 TAG=1.0
-IMAGE=dirc/alpine-curl-certs-jq
+IMAGE=dirc/alpine-curl-ca-certificates-jq
 
 docker build -t $IMAGE:$TAG .
+docker build -t $IMAGE:latest .
 
 docker push $IMAGE:$TAG
-
+docker push $IMAGE:latest
 
 ```
