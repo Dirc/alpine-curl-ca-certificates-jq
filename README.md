@@ -7,7 +7,7 @@ When testing api's you need `curl` and `jq` and for TLS you also need `ca-certif
 
 ```shell
 
-docker run --rm dirc/alpine-curl-certs-jq:latest curl https://www.google.com
+docker run --rm dirc/alpine-curl-ca-certificates-jq:latest curl https://www.google.com
 
 ```
 
