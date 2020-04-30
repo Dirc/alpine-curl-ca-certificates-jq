@@ -1,7 +1,7 @@
 
 # Alpine image containing: curl, ca-certificates and jq
 
-When testing api's you need `curl` and `jq` and for TLS you also need `ca-certificates`.
+When testing and troubleshooting api's you need `curl` and `jq`. There exist al lot of such `alpine` based images, but they all are missing `ca-certificates` which it's needed when using TLS.
 
 ## Usage
 
