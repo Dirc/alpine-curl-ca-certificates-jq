@@ -6,8 +6,11 @@ When testing and troubleshooting api's you need `curl` and `jq`. There exist al 
 ## Usage
 
 ```shell
-
+# Docker
 docker run --rm dirc/alpine-curl-ca-certificates-jq:latest curl https://www.google.com
+
+# Kubernetes
+kubectl run api --image=dirc/alpine-curl-ca-certificates-jq --rm -it -- curl https://www.google.com
 
 ```
 
